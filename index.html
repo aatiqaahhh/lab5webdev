@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+</head>
+<body>
+
+    <h1>Book Details</h1>
+
+    <script>
+        // The JSON data
+        var bookData = {
+            "books": [
+                {
+                    "title": "The Great Gatsby",
+                    "author": "F. Scott Fitzgerald",
+                    "publicationYear": 1925,
+                    "genres": ["Fiction", "Classics"]
+                },
+                {
+                    "title": "To Kill a Mockingbird",
+                    "author": "Harper Lee",
+                    "publicationYear": 1960,
+                    "genres": ["Fiction", "Coming-of-Age"]
+                }
+            ]
+        };
+
+        // Displaying details in the HTML document
+        document.write("<p>(a) Title of the first book: " + bookData.books[0].title + "</p>");
+        document.write("<p>(b) Author of the second book: " + bookData.books[1].author + "</p>");
+
+        var allGenres = bookData.books.reduce(function (accumulator, book) {
+            return accumulator.concat(book.genres);
+        }, []);
+
+        document.write("<p>(c) Genres of all books: " + allGenres.join(", ") + "</p>");
+    </script>
+
+</body>
+</html>
